@@ -7,7 +7,8 @@ router.get('/', (req, res) => {
 
 router.get('/products', (req, res) => {
     res.render('admin/products.html', {
-        message : 'hello!!!!!!'
+        message : '<h1>태그가 출력됩니다.</h1>',
+        online : 'express'
     })
 });
 
