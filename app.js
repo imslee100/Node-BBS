@@ -20,6 +20,7 @@ app.use( '/uploads', express.static('uploads') ); // url, folder name
 
 app.use( (req, res, next) => {
     app.locals.isLogin = true; // Global View Variable
+    app.locals.req_path = req.path;
     next();
 });
 
