@@ -18,6 +18,11 @@ app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({ extended : false }) );
 app.use( '/uploads', express.static('uploads') ); // url, folder name
 
+app.use( (req, res, next) => {
+    app.locals.isLogin = True; // Global View Variable
+    next();
+});
+
 app.get('/', (req, res) => {
     res.send('hello express');
 });
