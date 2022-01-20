@@ -12,12 +12,9 @@
 
         {% for product in products %}
         <tr>
-            <td><a href="/admin/products/detail/{{product.id}}">
-            {{ product.name }}
-            </a>
-            </td>
+            <td><a href="/admin/products/detail/{{product.id}}"> {{ product.name }} </a></td>
             <td>{{ product.price }}</td>
-            <td>{{ product.createdAt }}</td>
+            <td>{{ product.dateFormat( product.createdAt ) }}</td>
             <td><a href="#" class="btn btn-danger">삭제</a></td>
         </tr>
         {% endfor %}
