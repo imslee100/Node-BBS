@@ -19,6 +19,7 @@
   "homepage": "https://github.com/imslee100/node_web#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "morgan": "^1.10.0",
     "nunjucks": "^3.2.3"
   }
 }
