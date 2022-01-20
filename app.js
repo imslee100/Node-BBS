@@ -19,7 +19,7 @@ app.use( bodyParser.urlencoded({ extended : false }) );
 app.use( '/uploads', express.static('uploads') ); // url, folder name
 
 app.use( (req, res, next) => {
-    app.locals.isLogin = True; // Global View Variable
+    app.locals.isLogin = true; // Global View Variable
     next();
 });
 
@@ -33,6 +33,14 @@ function appMiddleware(req, res, next){
 }
 
 app.use('/admin', appMiddleware, admin);
+
+app.use( (req, res, _) => {
+    res.status(400).render('common/404.html');
+});
+
+app.use( (req, res, _) => {
+    res.status(500).render('common/500.html');
+});
 
 app.listen(port, () => {
     console.log('Express Listening on port', port);
